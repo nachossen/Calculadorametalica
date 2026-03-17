@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { font-family: 'DM Sans', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace !important; }
+input[type=range] { height: 5px; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0c0e14; }
+::-webkit-scrollbar-thumb { background: #252840; border-radius: 2px; }

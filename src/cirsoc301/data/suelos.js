@@ -1,0 +1,148 @@
+/**
+ * suelos.js — Tipos de suelo típicos de Argentina para predimensionado de fundaciones
+ *
+ * Parámetros de referencia para práctica argentina.
+ * Los valores son representativos y deben verificarse con ensayos de suelo.
+ *
+ * gamma  [kN/m³]  Peso unitario
+ * c      [kPa]    Cohesión no drenada (Cu para arcillas, c' para friccionantes)
+ * phi    [°]      Ángulo de fricción interna
+ * tauFric [kN/m²] Fricción lateral unitaria de pilotes (promedio)
+ * qTip   [kN/m²]  Resistencia de punta de pilote
+ * nota            Descripción y alcance regional
+ */
+
+export const SUELOS_ARG = [
+  {
+    id: 'limo_pampa_blanda',
+    nombre: 'Limo blando — Litoral (Santa Fe / Rosario)',
+    region: 'Litoral Pampeano',
+    gamma: 16.5,
+    c: 20,
+    phi: 0,
+    sigmaAdmRef: 80,   // referencia a Df=1.5m
+    tauFric: 18,
+    qTip: 150,
+    nota: 'Arcilla-limo de baja plasticidad, cubeta del Paraná. Capacidad portante baja. Frecuente en Santa Fe, Rosario, Paraná.',
+  },
+  {
+    id: 'limo_pampa_media',
+    nombre: 'Limo/loess medio — Pampa Húmeda (Córdoba / Sta. Fe interior)',
+    region: 'Pampa Húmeda',
+    gamma: 17.5,
+    c: 25,
+    phi: 18,
+    sigmaAdmRef: 120,
+    tauFric: 28,
+    qTip: 300,
+    nota: 'Loess limo-arenoso de mediana plasticidad. Muy frecuente en zona núcleo sojero (Santa Fe centro, Córdoba este, Entre Ríos).',
+  },
+  {
+    id: 'arena_limo_pampa',
+    nombre: 'Arena fina limosa — Pampa arenosa (La Pampa / oeste Bsas)',
+    region: 'Pampa Arenosa',
+    gamma: 18.0,
+    c: 8,
+    phi: 28,
+    sigmaAdmRef: 150,
+    tauFric: 35,
+    qTip: 400,
+    nota: 'Arena fina a media con finos. Buena capacidad portante. Occidente bonaerense y noreste de La Pampa.',
+  },
+  {
+    id: 'arcilla_bsas',
+    nombre: 'Arcilla media — Gran Buenos Aires / AMBA',
+    region: 'Metropolitana',
+    gamma: 17.0,
+    c: 40,
+    phi: 5,
+    sigmaAdmRef: 120,
+    tauFric: 30,
+    qTip: 280,
+    nota: 'Arcilla de mediana plasticidad, zona AMBA. Considerar expansividad y variación estacional.',
+  },
+  {
+    id: 'loess_cordoba',
+    nombre: 'Loess — Córdoba / Santiago del Estero',
+    region: 'Centro',
+    gamma: 17.5,
+    c: 30,
+    phi: 22,
+    sigmaAdmRef: 150,
+    tauFric: 32,
+    qTip: 350,
+    nota: 'Loess típico de la llanura cordobesa y santiagueña. Puede ser colapsible cuando satura.',
+  },
+  {
+    id: 'arcilla_noa',
+    nombre: 'Arcilla expansiva — NOA (Tucumán / Salta / Jujuy)',
+    region: 'NOA',
+    gamma: 17.0,
+    c: 35,
+    phi: 8,
+    sigmaAdmRef: 90,
+    tauFric: 22,
+    qTip: 200,
+    nota: 'Arcilla con potencial de expansión. Profundizar cota mínima 1.5-2.0 m. Verificar presión de hinchamiento.',
+  },
+  {
+    id: 'arena_granel_nea',
+    nombre: 'Arena mediana a gruesa — NEA (Corrientes / Misiones / Chaco)',
+    region: 'NEA',
+    gamma: 18.5,
+    c: 0,
+    phi: 32,
+    sigmaAdmRef: 180,
+    tauFric: 45,
+    qTip: 500,
+    nota: 'Arenas fluviales del litoral nordeste. Alta capacidad portante y de pilotes. Nivel freático alto en zonas bajas.',
+  },
+  {
+    id: 'grava_patagonia',
+    nombre: 'Grava y arena — Patagonia (Neuquén / Río Negro / Chubut)',
+    region: 'Patagonia',
+    gamma: 20.0,
+    c: 0,
+    phi: 36,
+    sigmaAdmRef: 350,
+    tauFric: 70,
+    qTip: 1000,
+    nota: 'Suelo granular grueso, alta capacidad. Verificar estratigrafía por posibles lentes de material fino intercalado.',
+  },
+  {
+    id: 'roca_semidura',
+    nombre: 'Roca semidura / tosca dura (interserrana / Mendoza)',
+    region: 'Cuyo / Precordillera',
+    gamma: 22.0,
+    c: 200,
+    phi: 35,
+    sigmaAdmRef: 500,
+    tauFric: 150,
+    qTip: 2000,
+    nota: 'Tosca calcárea o roca blanda. Capacidad portante muy alta. Perforación de pilotes requiere maquinaria especial.',
+  },
+  {
+    id: 'relleno_controlado',
+    nombre: 'Relleno controlado compactado',
+    region: 'General',
+    gamma: 18.0,
+    c: 10,
+    phi: 25,
+    sigmaAdmRef: 80,
+    tauFric: 20,
+    qTip: 180,
+    nota: 'Relleno con control de compactación (95% Proctor). No usar para pilotes sin verificación. Valores conservadores.',
+  },
+  {
+    id: 'custom',
+    nombre: 'Personalizado (ingreso manual)',
+    region: '',
+    gamma: 18.0,
+    c: 30,
+    phi: 20,
+    sigmaAdmRef: 150,
+    tauFric: 30,
+    qTip: 400,
+    nota: '',
+  },
+];
