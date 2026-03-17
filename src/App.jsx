@@ -95,6 +95,7 @@ export default function App() {
   return (
     <div className="flex flex-col items-center justify-center h-screen px-4" style={{ background: C.bg }}>
       <div className="text-center mb-10">
+        <div className="text-lg mb-2" style={{ color: C.dm }}>¡Hola! Bienvenido a</div>
         <div className="text-3xl font-bold tracking-wide" style={{ color: C.tx }}>CIRSOC 2025</div>
         <div className="text-sm mt-2" style={{ color: C.dm }}>Reglamentos Argentinos para la Construcción</div>
       </div>
